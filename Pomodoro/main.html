@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0fc4d04bb1.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./image/logo.png" type="image/x-icon">
+    <title>Pomodoro Timer Online</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./mainjs.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div class="nav">
+                <a href="">
+                    <h2><i class="fa-solid fa-circle-check fa-lg" style="color: #fff;"> </i>Pomofocus</h2>
+                </a>
+                <div class="control">
+                    <button class="header_btn"><i class="fa-solid fa-lg fa-square-poll-vertical"></i>Report</button>
+                    <button class="header_btn"><i class="fa-solid fa-lg fa-gear"></i>Setting</button>
+                    <a href="./login/login.html" class="login_link header_btn"><i class="fa-solid fa-lg fa-circle-user"></i>Login</a>
+                </div>
+            </div>
+            <span class="time_line"></span>
+        </header>
+        <div class="content">
+            <div class="main_content">
+                <div class="state">
+                    <button class="active" >Pomodoro</button>
+                    <button>Short Break</button>
+                    <button>Long Break</button>
+                </div>
+                <div class="clock">
+                    <div class="time"></div>
+                    <div class="start_stop">
+                        <button>START</button>
+                        <button><i class="fa-solid fa-2xl fa-forward-step"></i></button>
+                    </div>
+                </div>
+            </div>
+            <button class="reset_count">#0</button>
+            <p class="title_state">Time To Focus!</p>
+            <div class="task">
+                <div class="task_title">
+                    <p>Tasks</p>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <span class="bottom_line"></span>
+                <button class="add_task"><i class="fa-solid fa-circle-plus"></i>Add Tasks</button>
+            </div>
+        </div>
+    </div>
+    <div id="report_form" style="display: none;">
+    
+    </div>
+    <div id="setting_form" style="background-color: #ffffff20; height: 100vh; display: none;">
+        <div class="setting_options">
+            <header>Setting<i class="fa-solid fa-xmark close_setting_form"></i></header>
+            <span class="bottom_line"></span>
+            <div class="setting_time">
+                <h4 class="title">
+                    <i class="fa-regular fa-clock"></i>TIMER
+                </h4>
+                <p>Time (minutes)</p>
+                <div class="set_time">
+                    <label>Pomodoro<input type="number" min="0" max="60" class="pomo_time" value="25"></label>
+                    <label>Short Break<input type="number" min="0" max="60" class="short_time" value="5"></label>
+                    <label>Long Break<input type="number" min="0" max="60" class="long_time" value="15"></label>
+                </div>
+                <div class="count_long_break">
+                    Long Break Interval:
+                    <input type="number" class="count_time" min ="0" value="4">
+                </div>
+            </div>
+            <footer>
+                <button class="save_form">OK</button>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

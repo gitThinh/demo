@@ -1,0 +1,306 @@
+@import url(./souce.css);
+
+body{
+    background-color: var(--bc-main);
+    position: relative;
+    z-index: 1;
+}
+#container{
+    width: 630px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+#container header{
+    width: 100%;
+    margin-bottom: 40px;
+}
+#container header .nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#container header .nav>a h2{
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+#container header .nav>a i,
+.setting_time .title>i{
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+#container header .nav .control{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#container header .nav .control button{
+    margin-right: 15px;
+}
+.header_btn>i{
+    margin-right: 5px;
+}
+.header_btn{
+    min-width: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    border: none;
+    border-radius: 5px;
+    opacity: .8;
+    transition: opacity 0.1s linear;
+    background-color: rgba(255, 255, 255, .3);
+}
+.header_btn:hover{
+    opacity: 1;
+}
+.time_line{
+    display: block;
+    margin-top: 10px;
+    height: 1px;
+    width: 100%;
+    background-color: #000;
+    opacity: .1;
+}
+
+.content{
+    width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+.main_content{
+    width: 100%;
+    border-radius: 10px;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .2);
+}
+.state{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.state>button.active{
+    background-color: rgba(0, 0, 0, .2);
+    font-weight: 600;
+}
+.state button{
+    padding: 5px 12px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+}
+.clock{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.clock .time{
+    color: #fff;
+    font-size: 120px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.clock .start_stop button:nth-child(1){
+    width: 180px;
+    color: var(--bc-main);
+    padding: 14px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 22px;
+    font-weight: 600;
+    box-shadow: 0 5px 0 #cdcdcd;
+}
+.change_stop{
+    box-shadow: none !important;
+    transform: translateY(5px);
+}
+.start_stop{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.clock .start_stop button:nth-child(2){
+    position: absolute;
+    top: 16px;
+    right: -50px;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+}
+.reset_count{
+    margin-top: 30px;
+    opacity: .6;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    background-color: transparent;
+    letter-spacing: 2px;
+}
+.title_state{
+    font-size: 16px;
+    margin: 5px 0 25px 0;
+}
+
+#container .task{
+    width: 100%;
+}
+.task_title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.task_title>p{
+    font-size: 16px;
+    font-weight: 600;
+}
+.task_title>i:hover{    opacity: 1;}
+.task_title>i{
+    padding: 5px 12px;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 5px;
+    opacity: .8;
+    transition: opacity 0.2 linear;
+    cursor: pointer;
+}
+.bottom_line{
+    display: block;
+    margin-top: 15px;
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+    opacity: .6;
+}
+.add_task>i{    margin-right: 10px;}
+.add_task:hover{ opacity:1;}
+.add_task{
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 10px;
+    border: 2px dashed rgba(0, 0, 0, .6);
+    background-color: rgba(255, 255, 255, .4);
+    color: #fff;
+    font-size: 20px;
+    opacity: 0.8;
+    transition: all .3s ease-in-out;
+}
+
+
+/* ------------------------------------------------ setting form ---------------------------------------------------------- */
+
+#setting_form{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.setting_options{
+    width: 400px;
+    margin: 80px auto 0;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-top: 10px;
+    z-index: 100;
+}
+.setting_options header i:hover{
+    opacity: 1;
+}
+.setting_options header i{
+    opacity: .8;
+    cursor: pointer;
+}
+.setting_options header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 10px 20px 0;
+}
+.setting_options .bottom_line{
+    background-color: var(--text-color);
+}
+.setting_time{
+    padding: 20px;
+}
+.setting_time .title{
+    color: var(--text-color);
+    margin: 20px 0;
+}
+.setting_time>p{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.set_time{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.set_time label{
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+    gap: 5px;
+}
+.set_time label input,
+.count_long_break input{
+    border: none;
+    background-color: var(--bc-btn);
+    padding: 8px 12px;
+    border-radius: 5px;
+    width: 100px;
+}
+.set_time label input:focus,
+.count_long_break input:focus{
+    outline: none;
+}
+.count_long_break{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setting_options footer{
+    background-color: #cdcdcd60;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 20px;
+}
+.setting_options footer .save_form{
+    margin-left: auto;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+}

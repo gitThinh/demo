@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0fc4d04bb1.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../image/logo.png" type="image/x-icon">
+    <title>Pomodoro | Login</title>
+    <link rel="stylesheet" href="./loginstyle.css">
+    <script src="./login.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <a href="../main.html">
+                <h1><i class="fa-solid fa-circle-check fa-lg" style="color: #fff;"></i>Pomofocus</h1>
+            </a>
+            <p class="title_form">Log In</p>
+        </header>
+        <div class="content">
+            <div class="login">
+                <div class="main_content">
+                    <div class="other">
+                        <button class="gg_login">
+                            <img src="../image/gg-icon.png" alt="">Login With Google
+                        </button>
+                        <div class="or">
+                            <span class="line"></span>
+                            <p>or</p>
+                        </div>
+                    </div>
+                    <form class = "formLogin">
+                        <div class="group_input">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" placeholder="Email">
+                            <span class="messageError"></span>
+                        </div>
+                        <div class="group_input">
+                            <label for="pass">Password</label>
+                            <input type="password" name="password" placeholder="Password">
+                            <span class="messageError"></span>
+                        </div>
+                        <input type="submit" class="btn_submit" value="Login with Email">
+                    </form>
+                    <a href="" class="fg_pass">Forgot Password?</a>
+                </div>
+            </div>
+            <div class="signup" style="display: none;">
+                <div class="main_content">
+                    <div class="other">
+                        <button class="gg_login">
+                            <img src="../image/gg-icon.png" alt="">Login With Google
+                        </button>
+                        <div class="or">
+                            <span class="line"></span>
+                            <p>or</p>
+                        </div>
+                    </div>
+                    <form class = "formSignUp">
+                        <div class="group_input">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" placeholder="Email">
+                            <span class="messageError"></span>
+                        </div>
+                        <input type="submit" class="btn_submit" value="Sign up with Email">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <p class="question_text">Do not have an account?</p>
+        <button class="change_form" onclick="changeForm()">Create account</button>
+    </div>
+</body>
+</html>

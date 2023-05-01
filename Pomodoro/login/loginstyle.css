@@ -1,0 +1,168 @@
+@import url(../souce.css);
+
+body{
+    background-color: var(--bc-main);
+}
+#container{
+    width: 350px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+header h1 {
+    color: #fff;
+    font-size: 40px;
+}
+header h1 i{
+    margin-right: 10px;
+}
+header p{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    opacity: .9;
+}
+
+.content{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+.login,.signup{
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.main_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+}
+.main_content .other{
+    width: 100%;
+    margin-bottom: 5px;
+}
+.gg_login:hover{
+    box-shadow: 0 1px 5px #4d4d4d;
+}
+.gg_login{
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4d4d4d;
+    background-color: var(--bc-btn);
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 1px 3px #4d4d4d;
+    border: none;
+    margin-bottom: 10px;
+}
+.or{    margin-top: 20px;}
+.line{
+    display: block;
+    height: 0.5px;
+    width: 100%;
+    background-color: #cccccc;
+}
+.or>p{
+    margin: 0 auto;
+    width: 50px;
+    background-color: #fff;
+    transform: translateY(-13px);
+}
+
+.main_content form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.group_input{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+}
+.main_content form label{
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.main_content form input{
+    padding: 12px 18px;
+    outline: none;
+    margin: 5px 0 5px 0;
+    border-radius: 8px;
+    border: .5px solid #cccccc;
+    box-shadow: inset 1px 1px 1px #cccccc,
+    inset -1px -1px 1px #cccccc;
+}
+.main_content form .group_input input:focus{
+    border: .5px solid #4cde7a;
+    box-shadow: inset 1px 1px 1px #4cde7a,
+                inset -1px -1px 1px #4cde7a !important;
+}
+.messageError{
+    margin-left: 3px;
+    color: #c24646;
+    font-size: 13px;
+    height: 14px;
+    margin-bottom: 15px;
+}
+.invalid_input{
+    color:#c24646;
+    background-color: #c2464620;
+    border: .5px solid #c24646 !important;
+    box-shadow: none !important;
+}
+
+.btn_submit{
+    background-color: #000;
+    color: #eee;
+    box-shadow: none !important;
+    padding: 12px !important;
+    font-weight: 500;
+    font-size: 16px;
+    opacity: .8;
+    transition: opacity .3s ease;
+    cursor: pointer;
+}
+.btn_submit:hover{
+    opacity: 1;
+}
+.fg_pass{
+    color: #5c5c5c;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: underline;
+    opacity: .8;
+}
+#container .question_text{
+    color: #fff;
+    margin-top: 25px;
+    font-size: 15px;
+}
+#container .change_form{
+    color: #fff;
+    margin-top: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
