@@ -4,6 +4,7 @@ titleForm = document.querySelector('.title_form'),
 switchForm = document.querySelector('.change_form');
 const inputElement = [emailLogin, password, emailSignup] = document.querySelectorAll("input[name]");
 const [loginForm, signupForm] = document.querySelectorAll('form')
+const rulesEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
 
 const changeForm = () => {
     if(blockLogin.style.display === 'none') {
@@ -29,20 +30,17 @@ const showMessageError = (selector, message = 'Vui lòng nhập đầy đủ th�
     selector.classList.add('invalid_input');
   };
   
-  const removeMessageError = (selector) => {
-    selector.parentElement.querySelector(".messageError").innerHTML = '';
-    selector.classList.remove('invalid_input');
-  };
+const removeMessageError = (selector) => {
+selector.parentElement.querySelector(".messageError").innerHTML = '';
+selector.classList.remove('invalid_input');
+};
 
-const rulesEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
 function isEmail(selector) {
     if (!selector.value){
         showMessageError(selector);
     }
     else if (!rulesEmail.test(selector.value) && selector.value) {
         showMessageError(selector, 'Đây không phải là email!');
-    }else{
-        removeMessageError(selector);
     }
     selector.onfocus = () => {
         removeMessageError(selector);
@@ -55,8 +53,6 @@ function isMinLength(selector, minLength) {
     }
     else if (selector.value.length < minLength && selector.value) {
         showMessageError(selector, `Password phải dài hơn ${minLength} kí tự!`);
-    }else{
-        removeMessageError(selector);
     }
     selector.onfocus = () => {
     removeMessageError(selector);}
@@ -73,18 +69,31 @@ emailSignup.onblur = () => {
 }
 
 const submidForm = (selector) => {
-    selector.onsubmit = (e) => {
-        e.preventDefault();
-    }
     const inputEmail = selector.querySelector('input[name="email"]');
     const inputPass = selector.querySelector('input[name="password"]');
-    if (typeof inputEmail !== null) {
-        isEmail(inputEmail)
+    let isEmailValid = true;
+    let isPasswordValid = true;
+
+    if (inputEmail !== null) {
+        isEmailValid = isEmail(inputEmail);
     }
-    if (typeof inputPass !== null) {
-        isMinLength(inputPass,8)
+
+    if (inputPass !== null) {
+        isPasswordValid = isMinLength(inputPass, 8);
     }
-}
+    console.log(!(isEmailValid && isPasswordValid))
+    selector.onsubmit = (event) => {
+        if (!(isEmailValid && isPasswordValid)) {
+            event.preventDefault();
+        } else {
+            let inforUsers = {
+                email: inputEmail.value,
+                password: inputPass.value
+            };
+            alert(JSON.stringify(inforUsers)); // Display the form data as a string
+        }
+    };
+};
 
 loginForm.querySelector('input[type="submit"]').onclick = () =>{
     submidForm(loginForm)
@@ -92,3 +101,57 @@ loginForm.querySelector('input[type="submit"]').onclick = () =>{
 signupForm.querySelector('input[type="submit"]').onclick = () =>{
     submidForm(signupForm)
 }
+
+/*function isEmail(selector) {
+    if (!selector.value){
+        showMessageError(selector, 'Email không được để trống!');
+        return false;
+    }
+    else if (!rulesEmail.test(selector.value)) {
+        showMessageError(selector, 'Đây không phải là email!');
+        return false;
+    }
+    removeMessageError(selector);
+    return true;
+}
+
+function isMinLength(selector, minLength) {
+    if (!selector.value){
+        showMessageError(selector, 'Password không được để trống!');
+        return false;
+    }
+    else if (selector.value.length < minLength) {
+        showMessageError(selector, `Password phải dài hơn ${minLength} kí tự!`);
+        return false;
+    }
+    removeMessageError(selector);
+    return true;
+}
+
+const submidForm = (selector) => {
+    const inputEmail = selector.querySelector('input[name="email"]');
+    const inputPass = selector.querySelector('input[name="password"]');
+    let isEmailValid = true;
+    let isPasswordValid = true;
+
+    if (inputEmail !== null) {
+        isEmailValid = isEmail(inputEmail);
+    }
+
+    if (inputPass !== null) {
+        isPasswordValid = isMinLength(inputPass, 8);
+    }
+
+    selector.onsubmit = (event) => {
+        if (!(isEmailValid && isPasswordValid)) {
+            event.preventDefault();
+        } else {
+            let inforUsers = {
+                email: inputEmail.value,
+                password: inputPass.value
+            };
+            alert(JSON.stringify(inforUsers));
+            event.preventDefault();
+        }
+    };
+};*/
