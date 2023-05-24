@@ -16,7 +16,7 @@
         <div class="leftside__nav">
             <div class="pic__name">
                 <picture class="self__image">
-                    <img src="./IMG_2815.jpg" style="width:100px;">
+                    <img src="" style="width:100px;">
                 </picture>
                 <p class="text__name">Nguyễn Hữu Thịnh</p>
             </div>
@@ -33,9 +33,6 @@
                     </a>
                     <a class="nav__options" href="#porfolio__page">
                         <li >Porfolio</li>
-                    </a>
-                    <a class="nav__options" href="#porfolio__page">
-                        <li >Project</li>
                     </a>
                     <a class="nav__options" href="#contact__page">
                         <li >Contact</li>
@@ -56,11 +53,11 @@
                         I'm a senior at Duy Tân university. I'm fresher front-end devoloper.
                     </p>
                     <div class="home__referent">
-                        <a href="" class="project__referent">Got a project?</a>
-                        <a href="" class="contact__referent">Let's talk</a>
+                        <a href="#porfolio__page" class="project__referent">Got a project?</a>
+                        <a href="#contact__page" class="contact__referent">Let's talk</a>
                     </div>
                     <div class="home__base__info">
-                        <p class="base__info">number<br> email<br> address</p>
+                        <p class="base__info">+84 0768 479 160<br> nghthinh2302@gmail.com<br> Đà Nẵng</p>
                     </div>
                 </div>
                 <div class="home__right">
@@ -73,7 +70,7 @@
                         <p class="title__page">- NICE TO MEET YOU</p>
                         <h2 class="text__title">Nguyễn Hữu Thịnh</h2>
                         <p style="color: #130f49; font-size: 14px; margin-bottom: 40px;">Web designer & Coder</p>
-                        <a href="" class="project__referent">Got a project?</a>
+                        <a href="#porfolio__page" class="project__referent">Got a project?</a>
                     </div>
                     <div class="about__top__right">
                         <p>Hello there! My name is Nguyễn Hữu Thịnh.
@@ -124,7 +121,7 @@
                 <div class="head__page">
                     <div class="head__left">
                         <p class="title__page">- SERVICES</p>
-                        <h2 class="My Services">My Services</h2>
+                        <h2 class="text__title">My Services</h2>
                     </div>
                     <a href="mailto:nghthinh19989@gmail.com">nghthinh1998@gmail.com</a>
                 </div>
@@ -167,12 +164,69 @@
                     </div>
                 </div>
             </section>
-            <section id="porfolio__page"></section>
-            <section id="demo__page"></section>
-            <section id="contact__page"></section>
+            <section id="porfolio__page">
+                <div class="head__page">
+                    <div class="head__left">
+                        <p class="title__page">- PROJECT</p>
+                        <h2 class="text__title">Recent completed works</h2>
+                    </div>
+                    <div class="head__right">
+                        <i class="btn__move__project fa-solid fa-chevron-left"></i>
+                        <i class="btn__move__project fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="body__page">
+                    <div class="box__projects">
+                        <div class="project__box">
+                            <picture class="Show__project">
+                            <img class="image__projects" src="https://salt.tikicdn.com/ts/tmp/8f/c8/b0/8ae911ac40a7add1078fdf9b9c9011b1.jpg">
+                            </picture>
+                            <p class="typeof__project">Video</p>
+                            <h3 class="name__project">Trailer project</h3>
+                        </div>
+                        <div class="project__box">
+                            <picture class="Show__project">
+                            <img class="image__projects" src="https://salt.tikicdn.com/ts/tmp/8f/c8/b0/8ae911ac40a7add1078fdf9b9c9011b1.jpg">
+                            </picture>
+                            <p class="typeof__project">Video</p>
+                            <h3 class="name__project">Trailer project</h3>
+                        </div>
+                        <div class="project__box">
+                            <picture class="Show__project">
+                            <img class="image__projects" src="https://salt.tikicdn.com/ts/tmp/8f/c8/b0/8ae911ac40a7add1078fdf9b9c9011b1.jpg">
+                            </picture>
+                            <p class="typeof__project">Video</p>
+                            <h3 class="name__project">Trailer project</h3>
+                        </div>
+                        <div class="project__box">
+                            <picture class="Show__project">
+                            <img class="image__projects" src="https://salt.tikicdn.com/ts/tmp/8f/c8/b0/8ae911ac40a7add1078fdf9b9c9011b1.jpg">
+                            </picture>
+                            <p class="typeof__project">Video</p>
+                            <h3 class="name__project">Trailer project</h3>
+                        </div>
+                    </div>
+                    <a href="" class="showall__project project__referent">View all projects</a>
+                </div>
+            </section>
+            <section id="contact__page">
+                <div class="personal__contact">
+                    <p class="title__page">- LET'S CONNECT</p>
+                    <h2 class="text__title">Get in touch</h2>
+                    <p class="personal__detail">I'm currently avaliable to take on new projects, so feel free to send me a message about anything that you want to run past me. You can contact anytime at 24/7</p>
+                    <div class="contact__info">
+                        <p class="base__info">+84 0768 479 160<br> nghthinh2302@gmail.com<br> Đà Nẵng</p>
+                    </div>
+                </div>
+                <form action="getContact" class="form__contact">
+                    <input type="text" name="name" id="" placeholder="Your name or your company">
+                    <input type="text" name="email" id="" placeholder="Your Email">
+                    <textarea name="letter" id="textbox" rows="10" placeholder="Write something..."></textarea>
+                    <button type="submit" class="contact__submit project__referent">Submit now</button>
+                </form>
+            </section>
         </div>
     </div>
-
     <script src="./run1.js"></script>
 </body>
 </html>
