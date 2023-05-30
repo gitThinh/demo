@@ -1,5 +1,8 @@
 const navOptions = document.querySelectorAll('.nav__options'),
-    sections = document.getElementsByTagName('section');
+    sections = document.querySelectorAll('section'),
+    projectMoveButton = document.querySelectorAll('.btn__move__project'),
+    boxProjects = document.querySelector('.box__projects');
+    
 
 const clickActiveNav = () =>{
     navOptions.forEach(function (options) {
@@ -14,23 +17,36 @@ const clickActiveNav = () =>{
 
 const scrollActiveNav = () =>{
     window.addEventListener('scroll', function () {
-    
-        for(var i=0; i<sections.length; i++){
-            var rect = sections[i].getBoundingClientRect();
+        sections.forEach(function (option) {
+            let top = window.scrollY + 200;
+            let id = option.getAttribute('id');
 
-            if (rect.top >= 0 && rect.bottom <= window.innerHeight){
+            if (top >= option.offsetTop && top < option.offsetTop + option.offsetHeight ){
                 navOptions.forEach(function (option){
                     option.classList.remove('nav__active');
                 });
-                navOptions[i].classList.add("active");
+                document.querySelector('.nav__options[href="#'+id+'"]').classList.add('nav__active');
             }
-        }
+        });
     });
 };
 
+const slideProjects = () =>{
+    projectMoveButton[0].addEventListener('click', ()=>{
+        console.log(boxProjects.scrollX);
+        boxProjects.scrollLeft -= 333.3;
+    })
+    projectMoveButton[1].addEventListener('click', ()=>{
+        console.log(boxProjects.scrollX);
+        boxProjects.scrollLeft += 333.3;
+    })
+}
+
 function start(){
+    window.scrollTo(0,0);
     clickActiveNav();
     scrollActiveNav();
+    slideProjects();
 }
 
 start();

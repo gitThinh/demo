@@ -2,7 +2,7 @@
     margin: 0;padding: 0;box-sizing: border-box;
 }
 html{
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 ul{
     list-style: none;
@@ -29,6 +29,7 @@ body{
     font-family: roboto;
 }
 #container{
+    --leftSideWidth: 280px;
     position: relative;
     z-index: 1;
     width: 100%;
@@ -37,9 +38,10 @@ body{
     flex-direction: row;
 }
 .leftside__nav{
+    background-color: #fff;
     position: fixed;
     z-index: 10000;
-    width: 300px;
+    width: var(--leftSideWidth);
     height: 745px;
     display: flex;
     flex-direction: column;
@@ -107,7 +109,7 @@ nav .main__nav{
 
 .rightside{
     margin-left: 300px;
-    width: calc(100% - 300px);
+    width: calc(100% - var(--leftSideWidth));
 }
 #home__page{
     background-color: #effbf8;
@@ -315,43 +317,46 @@ nav .main__nav{
 
 .body__page{
     text-align: center;
+    --spaceGap: 20px;
+    --itemShow: 3;
+    --spaceNuber: calc(var(--itemShow) - var(--itemShow) / var(--itemShow));
 }
 .box__projects{
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: var(--spaceGap);
     margin-top: 20px;
     margin-bottom: 80px;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 .project__box{
     display: flex;
     flex-direction: column;
-    min-width: 310px;
+    min-width: calc((100% - var(--spaceGap)*var(--spaceNuber)) / var(--itemShow));
     text-align: left;
     gap: 15px;
 }
 .Show__project{
+    display: block;
     overflow: hidden;
-}
+} 
 .image__projects:hover{
-    
     scale: 1.2;
     transition: scale 0.5s ease;
 }
 .image__projects{
+    max-width: 100%;
     cursor: pointer;
     scale: 1;
-    display: block;
-    width: 310px;
-    height: 300px;
+    transition: scale 0.3s ease;
 }
 .typeof__project{
+    width: max-content;
     color: #333;
     font-weight: 500;
     font-size: 15px;
-    transition: color .3s linear;
     cursor: pointer;
 }
 .typeof__project:hover{
@@ -362,6 +367,7 @@ nav .main__nav{
     text-decoration: underline;
 }
 .name__project{
+    width: max-content;
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
@@ -401,4 +407,17 @@ nav .main__nav{
     padding: 15px 10px;
     margin-bottom: 25px;
     width: 100% !important;
+}
+.contact__submit{
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #130F49;
+    color: #eee;
+    transition: opacity .3s linear;
+}
+.contact__submit:hover{
+    opacity: .7;
 }
