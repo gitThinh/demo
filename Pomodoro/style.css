@@ -180,14 +180,43 @@ body{
     font-size: 16px;
     font-weight: 600;
 }
-.task_title>i:hover{    opacity: 1;}
-.task_title>i{
-    padding: 5px 12px;
+.task_controls{
+    text-align: right;
+    position: relative;
+}
+.task_controls>i:hover{    opacity: 1;}
+.task_controls>i{
+    padding: 6px 12px;
     background-color: rgba(255, 255, 255, .2);
     border-radius: 5px;
     opacity: .8;
     transition: opacity 0.2 linear;
     cursor: pointer;
+}
+.list_task_options{
+    transform: translateX(-152px);
+    margin-top: 10px;
+    width: 180px;
+    background-color: #eee;
+    color: #333;
+    padding: 10px 0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 10;
+    display: none;
+}
+.list_task_options li{
+    text-align: left;
+    font-size: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.2 linear;
+}
+.list_task_options li:hover{
+    background-color: #ccc;
+}
+.list_task_options li:last-child{
+    border-top: 1px solid #bbb;
 }
 .bottom_line{
     display: block;

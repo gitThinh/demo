@@ -34,11 +34,11 @@ const scrollActiveNav = () =>{
 const slideProjects = () =>{
     projectMoveButton[0].addEventListener('click', ()=>{
         console.log(boxProjects.scrollX);
-        boxProjects.scrollLeft -= 333.3;
+        boxProjects.scrollLeft -= 340;
     })
     projectMoveButton[1].addEventListener('click', ()=>{
         console.log(boxProjects.scrollX);
-        boxProjects.scrollLeft += 333.3;
+        boxProjects.scrollLeft += 340;
     })
 }
 

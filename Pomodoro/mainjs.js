@@ -69,7 +69,6 @@ const setStatePomo = () => {
     stopInterval(intervalNumber);
     innerCountState();
 }
-statePomo.onclick = setStatePomo;
 
 const setStateSB = () => {
     document.body.style.backgroundColor = 'var(--bc-short-break)';
@@ -82,7 +81,6 @@ const setStateSB = () => {
     stopInterval(intervalNumber);
     innerCountState();
 }
-stateSB.onclick = setStateSB;
 
 const setStateLB = () => {
     document.body.style.backgroundColor = 'var(--bc-long-break)';
@@ -95,7 +93,6 @@ const setStateLB = () => {
     stopInterval(intervalNumber);
     innerCountState();
 }
-stateLB.onclick = setStateLB;
 
 const innerCountState = () =>{
     resetCounter.innerHTML = '#'+countState;
@@ -110,35 +107,50 @@ const endTime = () => {
     }
     innerCountState();
 }
-nextState.onclick = endTime;
 
 
-setting.onclick = () => {
-    settingForm.style.display = 'block';
-    stopInterval(intervalNumber)
-}
-closeFormButton.onclick = () => {
-    pomoTime.value = time1;
-    shortTime.value = time2;
-    longTime.value = time3;
-    CT.value = stateStep;
-    settingForm.style.display = 'none';
-}
-resetCounter.onclick = () => {
-    if(confirm('Do you want to reset the counter?')){
-        countState = 0;
-        innerCountState(); 
+// control task
+
+
+
+
+
+// page load first time
+function loadPages(){
+    statePomo.onclick = setStatePomo;
+    stateSB.onclick = setStateSB;
+    stateLB.onclick = setStateLB;
+
+    setting.onclick = () => {
+        settingForm.style.display = 'block';
+        stopInterval(intervalNumber)
     }
-}
-saveForm.onclick = () => {
-    if(pomoTime.value > 0 && shortTime.value > 0 && longTime.value > 0){
-        setTimeAgain();
-        innerTime(setTimeCount());
+    closeFormButton.onclick = () => {
+        pomoTime.value = time1;
+        shortTime.value = time2;
+        longTime.value = time3;
+        CT.value = stateStep;
         settingForm.style.display = 'none';
-        x = setTimeCount()*60;
     }
+    resetCounter.onclick = () => {
+        if(confirm('Do you want to reset the counter?')){
+            countState = 0;
+            innerCountState(); 
+        }
+    }
+    saveForm.onclick = () => {
+        if(pomoTime.value > 0 && shortTime.value > 0 && longTime.value > 0){
+            setTimeAgain();
+            innerTime(setTimeCount());
+            settingForm.style.display = 'none';
+            x = setTimeCount()*60;
+        }
+    }
+    startStop.onclick = () => {
+        if(startStop.innerHTML === 'START') {    startInterval();}
+        else{    stopInterval(intervalNumber)}
+    }
+    nextState.onclick = endTime;
 }
-startStop.onclick = () => {
-    if(startStop.innerHTML === 'START') {    startInterval();}
-    else{    stopInterval(intervalNumber)}
-}
+
+loadPages();
